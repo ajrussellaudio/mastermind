@@ -20,7 +20,7 @@ class MasterMind
 			game_over
 		else
 			feedback(guess)
-			puts "Try #{@secret_code.join}..."
+			# puts "Try #{@secret_code.join}..."
 			turn
 		end
 	end
