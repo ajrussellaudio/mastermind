@@ -7,7 +7,7 @@ def feedback(guess)
 	for i in (0..@secret_code.length-1)
 		if guess[i] == @secret_code[i]
 			result[:black] += 1
-		elsif @secret_code.include?(guess[i])
+		elsif @secret_code.include?(guess[i]) && 
 			result[:white] += 1
 		end
 	end
