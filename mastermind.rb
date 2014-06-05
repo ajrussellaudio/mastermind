@@ -6,22 +6,20 @@ class MasterMind
 	require_relative 'victory'
 
 	def initialize
-		system "clear"
-		welcome_messages
-		@secret_code = make_secret_code
-		turn
+		setup_game
+		new_turn
 	end
 
 	private
 
-	def turn
+	def new_turn
 		guess = get_valid_guess
 		if victory?(guess)
 			game_over
 		else
-			feedback(guess)
-			# puts "Try #{@secret_code.join}..."
-			turn
+			@turns.increment
+			feedback_msgs(guess)
+			@turns.count < 12 ? new_turn : game_over(false)
 		end
 	end
 

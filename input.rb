@@ -7,6 +7,7 @@ def get_valid_guess
 end
 
 def parse(input)
+	puts @secret_code if input == "cheat"
 	guess = input.split("").map { |n| n.to_i }
 end
 
